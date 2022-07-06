@@ -21,6 +21,7 @@
 		5C9360F328763D8D00FFCF6E /* VideoViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9360F228763D8D00FFCF6E /* VideoViewModelTests.swift */; };
 		5C9360F528763DAA00FFCF6E /* MockVideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9360F428763DAA00FFCF6E /* MockVideoService.swift */; };
 		5C9360F728763E3700FFCF6E /* VideoStub.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C9360F628763E3700FFCF6E /* VideoStub.json */; };
+		5C9360F928764FCC00FFCF6E /* ContentViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9360F828764FCC00FFCF6E /* ContentViewUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		5C9360F228763D8D00FFCF6E /* VideoViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModelTests.swift; sourceTree = "<group>"; };
 		5C9360F428763DAA00FFCF6E /* MockVideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockVideoService.swift; sourceTree = "<group>"; };
 		5C9360F628763E3700FFCF6E /* VideoStub.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = VideoStub.json; sourceTree = "<group>"; };
+		5C9360F828764FCC00FFCF6E /* ContentViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			children = (
 				5C9360D92875EED500FFCF6E /* VideoAppUITests.swift */,
 				5C9360DB2875EED500FFCF6E /* VideoAppUITestsLaunchTests.swift */,
+				5C9360F828764FCC00FFCF6E /* ContentViewUITests.swift */,
 			);
 			path = VideoAppUITests;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C9360F928764FCC00FFCF6E /* ContentViewUITests.swift in Sources */,
 				5C9360DC2875EED500FFCF6E /* VideoAppUITestsLaunchTests.swift in Sources */,
 				5C9360DA2875EED500FFCF6E /* VideoAppUITests.swift in Sources */,
 			);
