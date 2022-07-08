@@ -9,7 +9,7 @@ import SwiftUI
 import AVKit
 
 struct ContentView: View {
-    @StateObject private var videoVM = VideoViewModel(videoService: VideoService(), urlString: Localization.urlAPIString)
+    @StateObject private var videoVM = VideoViewModel(videoService: VideoService(), urlString: Localization.urlAPIString, player: AVPlayer())
     @State private var isPresented = false
     
     var body: some View {
@@ -18,12 +18,11 @@ struct ContentView: View {
                 Button(video.name) {
                     isPresented.toggle()
                 }.fullScreenCover(isPresented: $isPresented) {
-                    let player = AVPlayer(url: URL(string: video.videoUrl)!)
-                    VideoPlayer(player: player).onAppear() {
-                        player.play()
-                    }.onDisappear() {
-                        player.pause()
-                    }
+                    VideoPlayer(player: videoVM.addAVPlayer(urlString: video.videoUrl))
+                }
+                VStack (alignment: .leading, spacing: 10) {
+                    Text(video.id)
+                    Text(video.location)
                 }
             }
         }

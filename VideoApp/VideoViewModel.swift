@@ -6,6 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
+import AVKit
+import AVFoundation
 
 class VideoViewModel: ObservableObject {
     
@@ -14,10 +17,12 @@ class VideoViewModel: ObservableObject {
     
     private let videoService: VideoServicing
     private let urlString: String
+    private var player: AVPlayer
     
-    init(videoService: VideoServicing, urlString: String) {
+    init(videoService: VideoServicing, urlString: String, player: AVPlayer) {
         self.videoService = videoService
         self.urlString = urlString
+        self.player = player
     }
     
     func getVideoData() {
@@ -34,5 +39,13 @@ class VideoViewModel: ObservableObject {
                 print(error)
             }
         }
+    }
+    
+    func addAVPlayer(urlString: String) -> AVPlayer {
+        guard let url = URL(string: urlString) else {
+            return player
+        }
+        player = AVPlayer(url: url)
+        return player
     }
 }
