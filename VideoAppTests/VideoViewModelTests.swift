@@ -8,16 +8,19 @@
 import XCTest
 import Combine
 @testable import VideoApp
+import AVFoundation
 
 class VideoViewModelTests: XCTestCase {
     
     var videoService: VideoServicing!
     var videoViewModel: VideoViewModel!
+    var videoPlayer: AVPlayer!
     var subscribers: Set<AnyCancellable>!
 
     override func setUpWithError() throws {
         videoService = MockVideoService()
-        videoViewModel = VideoViewModel(videoService: videoService, urlString: "VideoStub")
+        videoPlayer = AVPlayer()
+        videoViewModel = VideoViewModel(videoService: videoService, urlString: "VideoStub", player: videoPlayer)
         subscribers = Set<AnyCancellable>()
     }
 
@@ -39,5 +42,4 @@ class VideoViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 4)
         XCTAssertEqual(successVideos.count, 4)
     }
-
 }
