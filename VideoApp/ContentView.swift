@@ -18,7 +18,9 @@ struct ContentView: View {
                 Button(video.name) {
                     isPresented.toggle()
                 }.fullScreenCover(isPresented: $isPresented) {
-                    VideoPlayer(player: videoVM.addAVPlayer(urlString: video.videoUrl))
+                    VideoPlayer(player: videoVM.addAVPlayer(urlString: video.videoUrl)).onDisappear() {
+                        videoVM.pauseVideo()
+                    }
                 }
                 VStack (alignment: .leading, spacing: 10) {
                     Text(video.id)

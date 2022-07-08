@@ -48,4 +48,8 @@ class VideoViewModel: ObservableObject {
         player = AVPlayer(url: url)
         return player
     }
+    
+    func pauseVideo() {
+        player.pause()
+    }
 }
